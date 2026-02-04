@@ -10,16 +10,16 @@ import org.openqa.selenium.WebElement;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 public class ExcelUtil {
-    public static void writeHotelData(List<WebElement> hotelCards, String filePath) {
-        try {
+    public static void writeHotelData(List<WebElement> hotelCards, String filePath) throws IOException {
             if(hotelCards == null){
                 System.out.println("Hotel cards list is null"); return;
             }else { System.out.println("Writing hotel data Cards first top3"); }
             File resourcesDir = new File("src/test/resources");
-            if (!resourcesDir.exists()) { resourcesDir.mkdirs(); }
+            if (!resourcesDir.exists()) resourcesDir.mkdirs();
             XSSFWorkbook workbook = new XSSFWorkbook();
             XSSFSheet sheet = workbook.createSheet("Hotel Data");
             Row header = sheet.createRow(0);
@@ -58,13 +58,9 @@ public class ExcelUtil {
             workbook.write(file);
             workbook.close();
             file.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
-    public static void writeCruiseData(String guestCapacity, String renovated, String cruiseId, String filePath) {
-        try {
+    public static void writeCruiseData(String guestCapacity, String renovated, String cruiseId, String filePath) throws IOException {
             File resourcesDir = new File("src/test/resources");
             if (!resourcesDir.exists()) {
                 resourcesDir.mkdirs();
@@ -83,9 +79,6 @@ public class ExcelUtil {
             workbook.write(file);
             workbook.close();
             file.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
     public static void writeHotelNames(List<List<String>> hotelNamesLists, String filePath) {
         try (Workbook workbook = new XSSFWorkbook()) {
@@ -114,8 +107,9 @@ public class ExcelUtil {
             try (FileOutputStream file = new FileOutputStream(filePath)) {
                 workbook.write(file);
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

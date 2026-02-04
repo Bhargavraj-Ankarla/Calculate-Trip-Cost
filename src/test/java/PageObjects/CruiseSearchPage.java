@@ -41,11 +41,10 @@ public class CruiseSearchPage extends BasePage {
         Waits.waitForInvisibility(driver, dropdown, 15);
     }
 
-    public void closeAllPopups() throws InterruptedException {
+    public void closeAllPopups()  {
         for (WebElement btn : closeButtons) {
             if (btn.isDisplayed() && btn.isEnabled()) {
                 btn.click();
-                Thread.sleep(500);
             }
         }
     }

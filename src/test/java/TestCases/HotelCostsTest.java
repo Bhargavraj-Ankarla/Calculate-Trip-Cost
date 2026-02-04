@@ -6,6 +6,8 @@ import PageObjects.HotelResultsPage;
 import PageObjects.Homepage;
 import BaseTest.BaseTestClass;
 import Utilities.ExcelUtil;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +70,7 @@ public class HotelCostsTest extends BaseTestClass {
     }
 
     @Test (priority = 4 ,dependsOnMethods = {"hotelResultsAfterPoolFilter"})
-    public void TopReviewedHotelResults(){
+    public void TopReviewedHotelResults() throws IOException {
         HotelResultsPage hr = new HotelResultsPage(driver);
         hr.sortByTopReviewed();
         hr.refreshPage();

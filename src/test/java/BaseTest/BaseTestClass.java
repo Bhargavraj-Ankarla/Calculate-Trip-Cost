@@ -63,13 +63,14 @@ public class BaseTestClass {
         }
     }
 
-    public String captureScreen(String tName) throws IOException {
+    public String captureScreen(String tName) throws IOException{
         String timeStamp = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File sourceFile = takesScreenshot.getScreenshotAs(OutputType.FILE);
         String targetFilePath=System.getProperty("user.dir")+"\\Failed Screenshots\\" + tName + "_" + timeStamp + ".png";
         File targetFile=new File(targetFilePath);
-        sourceFile.renameTo(targetFile);
+        boolean result = sourceFile.renameTo(targetFile);
+        if (!result) { throw new IOException("Failed to move screenshot to: " + targetFilePath); }
         return targetFilePath;
     }
 }

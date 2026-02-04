@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import Utilities.Waits;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CruiseResultsPage extends BasePage {
@@ -27,7 +28,7 @@ public class CruiseResultsPage extends BasePage {
     List<WebElement> closeButtons;
 
     public void switchToLastWindow() {
-        List<String> windowList = new java.util.ArrayList<>(driver.getWindowHandles());
+        List<String> windowList = new ArrayList<>(driver.getWindowHandles());
         if (windowList.size() > 1) {
             driver.switchTo().window(windowList.getLast());
         }
@@ -45,7 +46,7 @@ public class CruiseResultsPage extends BasePage {
         try {
             Waits.waitForVisibility(driver, guestCapacityElem, 10);
             String GuestCapacityText = guestCapacityElem.getText();
-            String GuestCapacity = GuestCapacityText.replace("Guest capacity:", "").trim();
+            String GuestCapacity = GuestCapacityText.replace("Guest capacity:", "");
             return GuestCapacity.trim();
         } catch (Exception e) {
             return "N/A";

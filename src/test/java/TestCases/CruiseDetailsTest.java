@@ -6,9 +6,11 @@ import PageObjects.CruiseSearchPage;
 import BaseTest.BaseTestClass;
 import Utilities.ExcelUtil;
 
+import java.io.IOException;
+
 public class CruiseDetailsTest extends BaseTestClass {
     @Test(priority = 1)
-    public void cruisesDashboard() throws InterruptedException {
+    public void cruisesDashboard(){
         logger.info("***** Starting Cruise Details Test ****");
         CruiseSearchPage cruisePage = new CruiseSearchPage(driver);
         cruisePage.goToCruiseMenu();
@@ -29,7 +31,7 @@ public class CruiseDetailsTest extends BaseTestClass {
         cruiseResultsPage.selectFirstCruiseProduct();
     }
     @Test(priority = 3, dependsOnMethods = {"cruisesResultsPage"})
-    public void CruisesDetails(){
+    public void CruisesDetails() throws IOException {
         logger.info("***** Selected Cruise Details ****");
         CruiseResultsPage cruiseResultsP = new CruiseResultsPage(driver);
         cruiseResultsP.switchToLastWindow();

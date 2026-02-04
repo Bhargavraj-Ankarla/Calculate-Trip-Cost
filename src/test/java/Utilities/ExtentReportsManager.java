@@ -66,7 +66,6 @@ public class ExtentReportsManager implements ITestListener {
 
         test.log(Status.FAIL,result.getName()+" got failed");
         test.log(Status.INFO, result.getThrowable().getMessage());
-
         try {
             String imgPath = new BaseTestClass().captureScreen(result.getName());
             test.addScreenCaptureFromPath(imgPath);
