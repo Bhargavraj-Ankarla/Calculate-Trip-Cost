@@ -45,12 +45,12 @@ public class CruiseResultsPage extends BasePage {
     public void selectFirstCruiseProduct() {
         if (!cruiseProducts.isEmpty()) {
             WebElement firstCruise = cruiseProducts.getFirst();
-            Waits.waitForElementToBeClickable(driver, firstCruise, 10).click();
+            Waits.waitForElementToBeClickable(driver, firstCruise, 5).click();
         }
     }
     public String getGuestCapacity() {
         try {
-            Waits.waitForVisibility(driver, guestCapacityElem, 10);
+            Waits.waitForVisibility(driver, guestCapacityElem, 5);
             String GuestCapacityText = guestCapacityElem.getText();
             String GuestCapacity = GuestCapacityText.replace("Guest capacity:", "");
             return GuestCapacity.trim();
@@ -61,7 +61,7 @@ public class CruiseResultsPage extends BasePage {
 
     public String getRenovatedYear() {
         try {
-            Waits.waitForVisibility(driver, renovatedYear, 10);
+            Waits.waitForVisibility(driver, renovatedYear, 5);
             String RenovatedYearText = renovatedYear.getText();
             String RenovatedYear = RenovatedYearText.replace("Renovated:", "");
             return RenovatedYear.trim();
@@ -84,10 +84,10 @@ public class CruiseResultsPage extends BasePage {
         action.scrollToElement(Scrollpoint).perform();
     }
     public void waitForCruiseProductList() {
-        Waits.waitForVisibility(driver,ShipsListByName, 10);
+        Waits.waitForVisibility(driver,ShipsListByName, 5);
     }
     public void waitForCruiseDetailsPage() {
-        Waits.waitForVisibility(driver,ShipDetails, 10);
+        Waits.waitForVisibility(driver,ShipDetails, 5);
     }
     public void closeAllPopups() {
         for (WebElement closeButton : closeButtons) {

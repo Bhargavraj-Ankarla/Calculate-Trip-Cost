@@ -33,7 +33,7 @@ public class HotelResultsPage extends BasePage {
         }
     }
     public void applyPoolFilter() {
-        Waits.waitForElementToBeClickable(driver, poolFilter, 10).click();
+        Waits.waitForElementToBeClickable(driver, poolFilter, 5).click();
     }
     public void refreshPage() {
         driver.navigate().refresh();
@@ -42,9 +42,9 @@ public class HotelResultsPage extends BasePage {
         return hotelCards;
     }
     public void sortByTopReviewed() {
-        Waits.waitForVisibility(driver, sortDropdown, 10);
-        Waits.waitForElementToBeClickable(driver, sortDropdown, 10).click();
-        Waits.waitForVisibility(driver, topReviewedOption, 10);
-        Waits.waitForElementToBeClickable(driver, topReviewedOption, 10).click();
+        Waits.waitForVisibility(driver, sortDropdown, 5);
+        Waits.waitForElementToBeClickable(driver, sortDropdown, 5).click();
+        Waits.waitForVisibility(driver, topReviewedOption, 5);
+        Waits.waitForElementToBeClickable(driver, topReviewedOption, 5).click();
     }
 }

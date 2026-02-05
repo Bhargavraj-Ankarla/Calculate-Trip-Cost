@@ -10,23 +10,23 @@ import java.time.Duration;
 
 public class Waits {
     public static WebElement waitForElementToBeClickable(WebDriver driver, WebElement element, int seconds) {
-        return new WebDriverWait(driver, Duration.ofSeconds(seconds))
-                .until(ExpectedConditions.elementToBeClickable(element));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static WebElement waitForElementToBeClickable(WebDriver driver, By locator, int seconds) {
-        return new WebDriverWait(driver, Duration.ofSeconds(seconds))
-                .until(ExpectedConditions.elementToBeClickable(locator));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     public static void waitForVisibility(WebDriver driver, WebElement element, int seconds) {
-        new WebDriverWait(driver, Duration.ofSeconds(seconds))
-                .until(ExpectedConditions.visibilityOf(element));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static void waitForInvisibility(WebDriver driver, WebElement element, int seconds) {
-        new WebDriverWait(driver, Duration.ofSeconds(seconds))
-                .until(ExpectedConditions.invisibilityOf(element));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
 }

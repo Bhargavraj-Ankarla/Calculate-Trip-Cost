@@ -1,6 +1,7 @@
 package PageObjects;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import Utilities.Waits;
 
@@ -38,46 +39,48 @@ public class Homepage extends BasePage {
     }
 
     public void openCheckInDate() {
-        Waits.waitForVisibility(driver, checkInInput, 10);
-        Waits.waitForElementToBeClickable(driver, checkInInput, 10).click();
+        Waits.waitForVisibility(driver, checkInInput, 5);
+        Waits.waitForElementToBeClickable(driver, checkInInput, 5).click();
     }
 
     public void openCheckOutDate() {
-        Waits.waitForVisibility(driver, checkOutInput, 10);
-        Waits.waitForElementToBeClickable(driver, checkOutInput, 10).click();
+        Waits.waitForVisibility(driver, checkOutInput, 5);
+        Waits.waitForElementToBeClickable(driver, checkOutInput, 5).click();
     }
 
     public void selectDate(int day) {
-        Waits.waitForVisibility(driver, calendarTitle, 10);
+        Waits.waitForVisibility(driver, calendarTitle, 5);
         By daySelector = By.xpath("//li[@role='button' and not(contains(@class,'is-disable'))]//span[@class='day' and text()='" + day + "']");
-        WebElement dateElement = Waits.waitForElementToBeClickable(driver, daySelector, 10);
+        WebElement dateElement = Waits.waitForElementToBeClickable(driver, daySelector, 5);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", dateElement);
     }
 
     public void openGuestSelector() {
-        Waits.waitForVisibility(driver, guestSelector, 10);
-        WebElement guestElem = Waits.waitForElementToBeClickable(driver, guestSelector, 10);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", guestElem);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", guestElem);
+        Waits.waitForVisibility(driver, guestSelector, 5);
+        WebElement guestElem = Waits.waitForElementToBeClickable(driver, guestSelector, 5);
+        Actions action = new Actions(driver);
+        action.scrollToElement(guestElem).perform();
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", guestElem);
     }
 
     public void addAdults(int count){
         for (int i = 0; i < count; i++) {
-            WebElement addAdult = Waits.waitForElementToBeClickable(driver, addAdultsButton, 10);
+            WebElement addAdult = Waits.waitForElementToBeClickable(driver, addAdultsButton, 5);
             JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].click();", addAdult);
         }
     }
 
     public void confirmGuests() {
-        WebElement btn = Waits.waitForElementToBeClickable(driver, confirmGuestsButton, 10);
+        WebElement btn = Waits.waitForElementToBeClickable(driver, confirmGuestsButton, 5);
         btn.click();
         Waits.waitForInvisibility(driver, confirmGuestsButton, 5);
     }
 
     public void clickSearch() {
-        WebElement btn = Waits.waitForElementToBeClickable(driver, finalSearch, 10);
+        WebElement btn = Waits.waitForElementToBeClickable(driver, finalSearch, 5);
         btn.click();
     }
     public void closePopup() {
