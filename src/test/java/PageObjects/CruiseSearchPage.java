@@ -17,40 +17,33 @@ public class CruiseSearchPage extends BasePage {
     WebElement cruiseTab;
     @FindBy(xpath="//div[contains(text(),'Departure city')]/following-sibling::div//div[contains(@class,'cru-form-select-text')]")
     WebElement departureCityBox;
-    @FindBy(xpath="//div[contains(@class,'c-dropdown') and contains(@class,'show')]")
-    WebElement dropdown;
     @FindBy(xpath="//i[contains(@class,'fi-close')]")
     List<WebElement> closeButtons;
     @FindBy(xpath="//button[contains(@class,'cru-btn') and .//span[normalize-space()='Search']]")
     WebElement searchButton;
 
     public void goToCruiseMenu() {
-        WebElement cruiseMenu = Waits.waitForElementToBeClickable(driver, cruiseTab, 15);
-        assert cruiseMenu != null;
+        WebElement cruiseMenu = Waits.waitForElementToBeClickable(driver, cruiseTab, 10);
         cruiseMenu.click();
-        Waits.waitForUrlContains(driver, "/cruises", 15);
     }
 
     public void selectDepartureCity(String city) {
-        Waits.waitForVisibility(driver, departureCityBox, 15);
-        Waits.waitForElementToBeClickable(driver, departureCityBox, 15).click();
+        Waits.waitForVisibility(driver, departureCityBox, 10);
+        Waits.waitForElementToBeClickable(driver, departureCityBox, 10).click();
         By cityOption = By.xpath("//div[contains(@class,'c-dropdown') and contains(@class,'show')]//span[normalize-space()='" + city + "']");
-        WebElement cityElem = Waits.waitForElementToBeClickable(driver, cityOption, 15);
-        assert cityElem != null;
+        WebElement cityElem = Waits.waitForElementToBeClickable(driver, cityOption, 10);
         cityElem.click();
-        Waits.waitForInvisibility(driver, dropdown, 15);
     }
 
     public void closeAllPopups()  {
-        for (WebElement btn : closeButtons) {
-            if (btn.isDisplayed() && btn.isEnabled()) {
-                btn.click();
+        for (WebElement closeButton : closeButtons) {
+            if (closeButton.isDisplayed() && closeButton.isEnabled()) {
+                closeButton.click();
             }
         }
     }
     public void clickSearchButton() {
-        WebElement btn = Waits.waitForElementToBeClickable(driver, searchButton, 15);
-        assert btn != null;
-        btn.click();
+        WebElement search = Waits.waitForElementToBeClickable(driver, searchButton, 10);
+        search.click();
     }
 }

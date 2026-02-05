@@ -1,8 +1,8 @@
 package PageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import Utilities.Waits;
 
@@ -26,6 +26,12 @@ public class CruiseResultsPage extends BasePage {
     WebElement BestReviewed;
     @FindBy(xpath="//i[contains(@class,'fi-close')]")
     List<WebElement> closeButtons;
+    @FindBy(xpath="//div[@class='atlas-inner']")
+    WebElement Scrollpoint;
+    @FindBy(xpath="//div[@class='ship-parames']")
+    WebElement ShipDetails;
+    @FindBy(xpath="//div[contains(@class,'product-name')]")
+    WebElement ShipsListByName;
 
     public void switchToLastWindow() {
         List<String> windowList = new ArrayList<>(driver.getWindowHandles());
@@ -34,7 +40,7 @@ public class CruiseResultsPage extends BasePage {
         }
     }
     public void SelectTopReviewed(){
-        BestReviewed.click();
+        Waits.waitForElementToBeClickable(driver, BestReviewed, 5).click();
     }
     public void selectFirstCruiseProduct() {
         if (!cruiseProducts.isEmpty()) {
@@ -73,17 +79,21 @@ public class CruiseResultsPage extends BasePage {
             return "N/A";
         }
     }
-    public void closeAllPopups() {
-        for (WebElement btn : closeButtons) {
-            if (btn.isDisplayed() && btn.isEnabled()) {
-                btn.click();
-            }
-        }
+    public void Scrolling(){
+        Actions action = new Actions(driver);
+        action.scrollToElement(Scrollpoint).perform();
     }
     public void waitForCruiseProductList() {
-        Waits.waitForVisibility(driver, By.xpath("//div[contains(@class,'product-name')]"), 10);
+        Waits.waitForVisibility(driver,ShipsListByName, 10);
     }
     public void waitForCruiseDetailsPage() {
-        Waits.waitForVisibility(driver, By.xpath("//div[@class='ship-parames']"), 10);
+        Waits.waitForVisibility(driver,ShipDetails, 10);
+    }
+    public void closeAllPopups() {
+        for (WebElement closeButton : closeButtons) {
+            if (closeButton.isDisplayed() && closeButton.isEnabled()) {
+                closeButton.click();
+            }
+        }
     }
 }

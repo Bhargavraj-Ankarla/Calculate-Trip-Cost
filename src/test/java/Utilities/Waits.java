@@ -24,18 +24,9 @@ public class Waits {
                 .until(ExpectedConditions.visibilityOf(element));
     }
 
-    public static void waitForVisibility(WebDriver driver, By locator, int seconds) {
-        new WebDriverWait(driver, Duration.ofSeconds(seconds))
-                .until(ExpectedConditions.visibilityOfElementLocated(locator));
-    }
-
     public static void waitForInvisibility(WebDriver driver, WebElement element, int seconds) {
         new WebDriverWait(driver, Duration.ofSeconds(seconds))
                 .until(ExpectedConditions.invisibilityOf(element));
     }
 
-    public static void waitForUrlContains(WebDriver driver, String urlFragment, int seconds) {
-        new WebDriverWait(driver, Duration.ofSeconds(seconds))
-                .until(ExpectedConditions.urlContains(urlFragment));
-    }
 }

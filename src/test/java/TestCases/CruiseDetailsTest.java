@@ -36,6 +36,7 @@ public class CruiseDetailsTest extends BaseTestClass {
         CruiseResultsPage cruiseResultsP = new CruiseResultsPage(driver);
         cruiseResultsP.switchToLastWindow();
         cruiseResultsP.waitForCruiseDetailsPage();
+        cruiseResultsP.Scrolling();
 
         String guestCapacity = cruiseResultsP.getGuestCapacity();
         String renovated = cruiseResultsP.getRenovatedYear();

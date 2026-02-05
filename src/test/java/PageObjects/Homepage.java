@@ -32,17 +32,6 @@ public class Homepage extends BasePage {
     @FindBy(xpath="//i[contains(@class,'fi-close')]")
     List<WebElement> closeButtons;
 
-    public void closePopup() {
-        try {
-            for (WebElement closeIcon : closeButtons) {
-                if (closeIcon.isDisplayed() && closeIcon.isEnabled()) {
-                    closeIcon.click();
-                    break;
-                }
-            }
-        } catch (Exception ignored) {
-        }
-    }
 
     public void enterDestination(String destination) {
         destinationInput.sendKeys(destination);
@@ -75,22 +64,31 @@ public class Homepage extends BasePage {
 
     public void addAdults(int count){
         for (int i = 0; i < count; i++) {
-            WebElement addBtn = Waits.waitForElementToBeClickable(driver, addAdultsButton, 10);
+            WebElement addAdult = Waits.waitForElementToBeClickable(driver, addAdultsButton, 10);
             JavascriptExecutor js = (JavascriptExecutor) driver;
-            js.executeScript("arguments[0].click();", addBtn);
+            js.executeScript("arguments[0].click();", addAdult);
         }
     }
 
     public void confirmGuests() {
         WebElement btn = Waits.waitForElementToBeClickable(driver, confirmGuestsButton, 10);
-        assert btn != null;
         btn.click();
-        Waits.waitForInvisibility(driver, confirmGuestsButton, 10);
+        Waits.waitForInvisibility(driver, confirmGuestsButton, 5);
     }
 
     public void clickSearch() {
         WebElement btn = Waits.waitForElementToBeClickable(driver, finalSearch, 10);
-        assert btn != null;
         btn.click();
+    }
+    public void closePopup() {
+        try {
+            for (WebElement closeIcon : closeButtons) {
+                if (closeIcon.isDisplayed() && closeIcon.isEnabled()) {
+                    closeIcon.click();
+                    break;
+                }
+            }
+        } catch (Exception ignored) {
+        }
     }
 }
