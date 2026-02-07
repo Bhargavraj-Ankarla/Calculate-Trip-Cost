@@ -27,7 +27,7 @@ public class CruiseResultsPage extends BasePage {
     @FindBy(xpath="//i[contains(@class,'fi-close')]")
     List<WebElement> closeButtons;
     @FindBy(xpath="//div[@class='atlas-inner']")
-    WebElement Scrollpoint;
+    WebElement ScrollUpTo;
     @FindBy(xpath="//div[@class='ship-parames']")
     WebElement ShipDetails;
     @FindBy(xpath="//div[contains(@class,'product-name')]")
@@ -51,8 +51,7 @@ public class CruiseResultsPage extends BasePage {
     public String getCruiseId() {
         try {
             String cruiseIdText = cruiseId.getText();
-            String cruiseId = cruiseIdText.replace("Cruise ID:", "");
-            return cruiseId.trim();
+            return cruiseIdText.split(":")[1];
         } catch (Exception e) {
             System.out.println("Cruise ID not found: " + e.getMessage());
             return "N/A";
@@ -62,9 +61,9 @@ public class CruiseResultsPage extends BasePage {
         try {
             Waits.waitForVisibility(driver, guestCapacityElem, 5);
             String GuestCapacityText = guestCapacityElem.getText();
-            String GuestCapacity = GuestCapacityText.replace("Guest capacity:", "");
-            return GuestCapacity.trim();
+            return GuestCapacityText.split(":")[1];
         } catch (Exception e) {
+            System.out.println("GuestCapacity not found: " + e.getMessage());
             return "N/A";
         }
     }
@@ -73,16 +72,16 @@ public class CruiseResultsPage extends BasePage {
         try {
             Waits.waitForVisibility(driver, renovatedYear, 5);
             String RenovatedYearText = renovatedYear.getText();
-            String RenovatedYear = RenovatedYearText.replace("Renovated:", "");
-            return RenovatedYear.trim();
+            return  RenovatedYearText.split(":")[1];
         } catch (Exception e) {
+            System.out.println("RenovatedYear not found: " + e.getMessage());
             return "N/A";
         }
     }
 
     public void Scrolling(){
         Actions action = new Actions(driver);
-        action.scrollToElement(Scrollpoint).perform();
+        action.scrollToElement(ScrollUpTo).perform();
     }
     public void waitForCruiseProductList() {
         Waits.waitForVisibility(driver,ShipsListByName, 5);

@@ -17,33 +17,41 @@ public class CruiseSearchPage extends BasePage {
     WebElement cruiseTab;
     @FindBy(xpath="//div[contains(text(),'Departure city')]/following-sibling::div//div[contains(@class,'cru-form-select-text')]")
     WebElement departureCity;
+    @FindBy(xpath="//div[contains(@class,'c-dropdown') and contains(@class,'show')]")
+    WebElement dropdown;
     @FindBy(xpath="//div[contains(text(),'Destination')]/following-sibling::div//div[contains(@class,'cru-form-select-text')]")
     WebElement destinationCity;
-    //div[contains(text(),'Destination')]/following-sibling::div//div[contains(@class,'cru-form-select-text')]
     @FindBy(xpath="//i[contains(@class,'fi-close')]")
     List<WebElement> closeButtons;
     @FindBy(xpath="//button[contains(@class,'cru-btn') and .//span[normalize-space()='Search']]")
     WebElement searchButton;
 
-    public void goToCruiseMenu() {
-        WebElement cruiseMenu = Waits.waitForElementToBeClickable(driver, cruiseTab, 5);
-        cruiseMenu.click();
+    public void goToCruiseMenu() throws Exception {
+        try{
+            WebElement cruiseMenu = Waits.waitForElementToBeClickable(driver, cruiseTab, 10);
+            cruiseMenu.click();
+            Waits.waitForUrlContains(driver,"/cruises",10);
+        }catch(Exception e){
+            throw new Exception("Unable to go to the cruise menu due to"+e.getMessage());
+        }
     }
 
     public void selectDepartureCity(String city) {
         Waits.waitForVisibility(driver, departureCity, 5);
         Waits.waitForElementToBeClickable(driver, departureCity, 5).click();
         By cityOption = By.xpath("//div[contains(@class,'c-dropdown') and contains(@class,'show')]//span[normalize-space()='" + city + "']");
-        WebElement cityElem = Waits.waitForElementToBeClickable(driver, cityOption, 5);
-        cityElem.click();
+        WebElement cityName = Waits.waitForElementToBeClickable(driver, cityOption, 5);
+        cityName.click();
+        Waits.waitForInvisibility(driver,dropdown,10);
     }
 
     public void selectDestinationCity(String city) {
         Waits.waitForVisibility(driver, destinationCity, 5);
         Waits.waitForElementToBeClickable(driver, destinationCity, 5).click();
         By cityOption = By.xpath("//div[contains(@class,'c-dropdown') and contains(@class,'show')]//span[normalize-space()='" + city + "']");
-        WebElement cityElem = Waits.waitForElementToBeClickable(driver, cityOption, 5);
-        cityElem.click();
+        WebElement cityName = Waits.waitForElementToBeClickable(driver, cityOption, 5);
+        cityName.click();
+        Waits.waitForInvisibility(driver,dropdown,10);
     }
 
     public void closeAllPopups()  {

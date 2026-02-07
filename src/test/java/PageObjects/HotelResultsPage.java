@@ -23,6 +23,8 @@ public class HotelResultsPage extends BasePage {
     WebElement sortDropdown;
     @FindBy(xpath="//span[contains(@class,'style_dropdown-selector-options__BelBO') and normalize-space(text())='Top reviewed']")
     WebElement topReviewedOption;
+    @FindBy(xpath = "//div[contains(@class,'style_choosen-item__XppJT')]/span")
+    WebElement filterResultText;
 
     public String getResultsCount() {
         try {
@@ -41,10 +43,22 @@ public class HotelResultsPage extends BasePage {
     public List<WebElement> getHotelCards() {
         return hotelCards;
     }
+
     public void sortByTopReviewed() {
         Waits.waitForVisibility(driver, sortDropdown, 5);
         Waits.waitForElementToBeClickable(driver, sortDropdown, 5).click();
         Waits.waitForVisibility(driver, topReviewedOption, 5);
         Waits.waitForElementToBeClickable(driver, topReviewedOption, 5).click();
+    }
+
+    public String getSearchResultText() {
+        try {
+            Waits.waitForVisibility(driver, filterResultText, 10);
+            System.out.println("Search result text: " + filterResultText.getText());
+            return filterResultText.getText();
+        } catch (Exception e) {
+            System.out.println("Search result text not found: " + e.getMessage());
+            return "";
+        }
     }
 }

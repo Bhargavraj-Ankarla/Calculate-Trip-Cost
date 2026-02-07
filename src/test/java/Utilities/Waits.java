@@ -29,4 +29,9 @@ public class Waits {
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
 
+    public static void waitForUrlContains(WebDriver driver, String urlFragment,int seconds){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.urlContains(urlFragment));
+    }
+
 }
