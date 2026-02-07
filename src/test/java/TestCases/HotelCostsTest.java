@@ -14,14 +14,24 @@ import java.util.List;
 
 public class HotelCostsTest extends BaseTestClass {
 
+    List<WebElement> hotelCards;
     List<String> afterSearch;
     List<String> afterPool;
     List<String> afterTopReviewed;
 
     @Test (priority = 1)
-    public void HomepageDashboard () {
+    public void WarningMsg(){
+      //  Homepage hp = new Homepage(driver);
         String CurrentTime = "ID-" + java.time.LocalTime.now();
-        logger.info("{} --- Starting HotelCostsTest - HomepageDashboard --- ", CurrentTime);
+        logger.info("{} --Starting HotelCostsTest -- Capture warning message ", CurrentTime);
+//        hp.clickSearch();
+//        String warningMessage = hp.WarningMSG();
+//        System.out.println("Captured warning message is "+warningMessage);
+    }
+
+    @Test (priority = 2)
+    public void HomepageDashboard () {
+        logger.info("*****  Starting HotelCostsTest - HomepageDashboard  ****");
         Homepage hp = new Homepage(driver);
         hp.closePopup();
         hp.enterDestination("Nairobi");
@@ -39,24 +49,24 @@ public class HotelCostsTest extends BaseTestClass {
         logger.info("***** Searched for required hotel details  ****");
     }
 
-    @Test (priority = 2 , dependsOnMethods = {"HomepageDashboard"})
+    @Test (priority = 3 , dependsOnMethods = {"HomepageDashboard"})
     public void hotelResultsPage() {
         logger.info("***** HotelResultsPage Started  ****");
         HotelResultsPage hr = new HotelResultsPage(driver);
         String resultsCount = hr.getResultsCount();
         System.out.println("Total hotel results: " + resultsCount);
-        List<WebElement> hotelCards = hr.getHotelCards();
+        hotelCards = hr.getHotelCards();
         afterSearch = new ArrayList<>();
         for (WebElement card : hotelCards) {
             afterSearch.add(card.getText());
         }
     }
-    @Test (priority = 3 ,dependsOnMethods = {"hotelResultsPage"})
+    @Test (priority = 4 ,dependsOnMethods = {"hotelResultsPage"})
     public void hotelResultsAfterPoolFilter() {
         HotelResultsPage hr = new HotelResultsPage(driver);
         hr.applyPoolFilter();
         hr.refreshPage();
-        List<WebElement> hotelCards = hr.getHotelCards();
+        hotelCards = hr.getHotelCards();
         afterPool = new ArrayList<>();
         for (WebElement element : hotelCards) {
             afterPool.add(element.getText());
@@ -69,12 +79,12 @@ public class HotelCostsTest extends BaseTestClass {
         System.out.println("Total hotel results after Pool filter: " + resultsCountAfterPool);
     }
 
-    @Test (priority = 4 ,dependsOnMethods = {"hotelResultsAfterPoolFilter"})
+    @Test (priority = 5 ,dependsOnMethods = {"hotelResultsAfterPoolFilter"})
     public void TopReviewedHotelResults() throws IOException {
         HotelResultsPage hr = new HotelResultsPage(driver);
         hr.sortByTopReviewed();
         hr.refreshPage();
-        List<WebElement> hotelCards = hr.getHotelCards();
+        hotelCards = hr.getHotelCards();
         afterTopReviewed = new ArrayList<>();
         for (WebElement element : hotelCards) {
             afterTopReviewed.add(element.getText());

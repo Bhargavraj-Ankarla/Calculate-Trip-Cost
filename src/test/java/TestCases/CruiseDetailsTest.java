@@ -15,7 +15,8 @@ public class CruiseDetailsTest extends BaseTestClass {
         CruiseSearchPage cruisePage = new CruiseSearchPage(driver);
         cruisePage.goToCruiseMenu();
         cruisePage.closeAllPopups();
-        cruisePage.selectDepartureCity("Abu Dhabi");
+        cruisePage.selectDepartureCity("New York");
+        cruisePage.selectDestinationCity("Europe");
         cruisePage.closeAllPopups();
         cruisePage.clickSearchButton();
         logger.info("***** Cruise Details Test Completed ****");
@@ -47,7 +48,7 @@ public class CruiseDetailsTest extends BaseTestClass {
         logger.info("Cruise ID: {}", cruiseId);
 
         System.out.println("Cruise ID: " + cruiseId);
-        System.out.println("Guest Capacity: " + guestCapacity + " members");
+        System.out.println("Guest Capacity: " + guestCapacity);
         System.out.println("Renovated Year: " + renovated);
 
         ExcelUtil.writeCruiseData(guestCapacity, renovated, cruiseId, configProp.getProperty("Cruise-Details"));

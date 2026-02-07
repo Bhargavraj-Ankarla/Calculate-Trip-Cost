@@ -18,7 +18,7 @@ public class CruiseResultsPage extends BasePage {
     List<WebElement> cruiseProducts;
     @FindBy(xpath="//div[@class='ship-parames']/span[contains(text(),'Guest capacity:')]")
     WebElement guestCapacityElem;
-    @FindBy(xpath="//div[@class='ship-parames']/span[contains(text(),'Renovated:')]")
+    @FindBy(xpath="//div[@class='ship-parames']/span[contains(text(),'Entered service')]")
     WebElement renovatedYear;
     @FindBy(xpath="//div[contains(@class,'cruise-ids')]/span[contains(@class,'cruise-id') and contains(text(),'Cruise ID:')]")
     WebElement cruiseId;
@@ -48,6 +48,16 @@ public class CruiseResultsPage extends BasePage {
             Waits.waitForElementToBeClickable(driver, firstCruise, 5).click();
         }
     }
+    public String getCruiseId() {
+        try {
+            String cruiseIdText = cruiseId.getText();
+            String cruiseId = cruiseIdText.replace("Cruise ID:", "");
+            return cruiseId.trim();
+        } catch (Exception e) {
+            System.out.println("Cruise ID not found: " + e.getMessage());
+            return "N/A";
+        }
+    }
     public String getGuestCapacity() {
         try {
             Waits.waitForVisibility(driver, guestCapacityElem, 5);
@@ -69,16 +79,7 @@ public class CruiseResultsPage extends BasePage {
             return "N/A";
         }
     }
-    public String getCruiseId() {
-        try {
-            String cruiseIdText = cruiseId.getText();
-            String cruiseId = cruiseIdText.replace("Cruise ID:", "");
-            return cruiseId.trim();
-        } catch (Exception e) {
-            System.out.println("Cruise ID not found: " + e.getMessage());
-            return "N/A";
-        }
-    }
+
     public void Scrolling(){
         Actions action = new Actions(driver);
         action.scrollToElement(Scrollpoint).perform();

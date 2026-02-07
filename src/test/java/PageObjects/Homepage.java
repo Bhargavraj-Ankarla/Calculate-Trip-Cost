@@ -30,10 +30,17 @@ public class Homepage extends BasePage {
     WebElement confirmGuestsButton;
     @FindBy(xpath="//span[@class='tripui-online-btn-content-children ' and text()='Search']")
     WebElement finalSearch;
+    @FindBy(xpath="//div[contains(@class,'search-box-instance-con')]//div[contains(text(),'Please provide a location')]")
+    WebElement warningMsg;
     @FindBy(xpath="//i[contains(@class,'fi-close')]")
     List<WebElement> closeButtons;
 
 
+    public String WarningMSG(){
+        // finalSearch.click();
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", finalSearch);
+        return warningMsg.getText();
+    }
     public void enterDestination(String destination) {
         destinationInput.sendKeys(destination);
     }
@@ -74,14 +81,14 @@ public class Homepage extends BasePage {
     }
 
     public void confirmGuests() {
-        WebElement btn = Waits.waitForElementToBeClickable(driver, confirmGuestsButton, 5);
-        btn.click();
+        WebElement Done = Waits.waitForElementToBeClickable(driver, confirmGuestsButton, 5);
+        Done.click();
         Waits.waitForInvisibility(driver, confirmGuestsButton, 5);
     }
 
     public void clickSearch() {
-        WebElement btn = Waits.waitForElementToBeClickable(driver, finalSearch, 5);
-        btn.click();
+        WebElement search = Waits.waitForElementToBeClickable(driver, finalSearch, 5);
+        search.click();
     }
     public void closePopup() {
         try {

@@ -62,9 +62,7 @@ public class ExcelUtil {
 
     public static void writeCruiseData(String guestCapacity, String renovated, String cruiseId, String filePath) throws IOException {
             File resourcesDir = new File("src/test/resources");
-            if (!resourcesDir.exists()) {
-                resourcesDir.mkdirs();
-            }
+            if (!resourcesDir.exists()) {resourcesDir.mkdirs();}
             XSSFWorkbook workbook = new XSSFWorkbook();
             XSSFSheet sheet = workbook.createSheet("Cruise Data");
             Row header = sheet.createRow(0);
