@@ -44,7 +44,7 @@ public class ExcelUtil {
                     List<WebElement> totalPriceElement = card.findElements(By.xpath(".//p[contains(text(),'Total price')]"));
                     if (!totalPriceElement.isEmpty()) {
                         String totalDetails = totalPriceElement.getFirst().getText();
-                        totalPrice = totalDetails.replaceAll("(?s).*?(₹\\s?[0-9,]+).*", "$1");
+                        totalPrice = totalDetails.split(":")[1].trim();
                     }
                 } catch (Exception ignored) {}
                 Row row = sheet.createRow(i + 1);

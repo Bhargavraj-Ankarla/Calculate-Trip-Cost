@@ -125,3 +125,66 @@
 2026-02-07 20:42:11 INFO  HotelCostsTest:56 - Renovated: 2015
 2026-02-07 20:42:11 INFO  HotelCostsTest:57 - Cruise ID: 205752
 2026-02-07 20:42:11 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****
+2026-02-07 20:55:16 INFO  HotelCostsTest:56 - ID-20:55:15.964401500 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-07 20:55:36 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
+2026-02-07 20:55:36 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
+2026-02-07 20:56:37 INFO  HotelCostsTest:56 - ID-20:56:37.615153400 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-07 20:57:07 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
+2026-02-07 20:57:07 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
+2026-02-07 20:57:23 INFO  HotelCostsTest:146 - ***** HotelCostsTest Completed  ****
+2026-02-07 20:57:23 INFO  HotelCostsTest:13 - ***** Starting Cruise Details Test ****
+2026-02-07 20:58:09 INFO  HotelCostsTest:22 - ***** Cruise Details Test Completed ****
+2026-02-07 20:58:09 INFO  HotelCostsTest:29 - ***** Starting Cruise Results Test ****
+2026-02-07 20:58:24 INFO  HotelCostsTest:44 - ***** Selected Cruise Details ****
+2026-02-07 20:58:30 INFO  HotelCostsTest:55 - Guest capacity: 4,266
+2026-02-07 20:58:30 INFO  HotelCostsTest:56 - Renovated: 2015
+2026-02-07 20:58:30 INFO  HotelCostsTest:57 - Cruise ID: 205752
+2026-02-07 20:58:30 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****
+2026-02-07 21:01:09 INFO  HotelCostsTest:56 - ID-21:01:09.067138700 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-07 21:01:40 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
+2026-02-07 21:01:40 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
+2026-02-07 21:02:02 INFO  HotelCostsTest:146 - ***** HotelCostsTest Completed  ****
+2026-02-07 21:02:02 INFO  HotelCostsTest:13 - ***** Starting Cruise Details Test ****
+2026-02-07 21:02:46 INFO  HotelCostsTest:22 - ***** Cruise Details Test Completed ****
+2026-02-07 21:02:46 INFO  HotelCostsTest:29 - ***** Starting Cruise Results Test ****
+2026-02-07 21:03:00 INFO  HotelCostsTest:44 - ***** Selected Cruise Details ****
+2026-02-07 21:03:04 INFO  HotelCostsTest:55 - Guest capacity: 4,266
+2026-02-07 21:03:04 INFO  HotelCostsTest:56 - Renovated: 2015
+2026-02-07 21:03:04 INFO  HotelCostsTest:57 - Cruise ID: 205752
+2026-02-07 21:03:04 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****
+2026-02-07 21:06:44 INFO  HotelCostsTest:56 - ID-21:06:44.472560100 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-07 21:07:16 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
+2026-02-07 21:07:16 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
+2026-02-07 21:07:32 INFO  HotelCostsTest:146 - ***** HotelCostsTest Completed  ****
+2026-02-07 21:07:32 INFO  HotelCostsTest:13 - ***** Starting Cruise Details Test ****
+2026-02-07 21:08:15 INFO  HotelCostsTest:22 - ***** Cruise Details Test Completed ****
+2026-02-07 21:08:15 INFO  HotelCostsTest:29 - ***** Starting Cruise Results Test ****
+2026-02-07 21:08:29 INFO  HotelCostsTest:44 - ***** Selected Cruise Details ****
+2026-02-07 21:08:35 INFO  HotelCostsTest:55 - Guest capacity: 4,266
+2026-02-07 21:08:35 INFO  HotelCostsTest:56 - Renovated: 2015
+2026-02-07 21:08:35 INFO  HotelCostsTest:57 - Cruise ID: 205752
+2026-02-07 21:08:35 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****
+2026-02-07 21:10:36 INFO  HotelCostsTest:56 - ID-21:10:36.366568 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-07 21:10:58 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
+2026-02-07 21:10:58 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
+2026-02-07 21:11:14 INFO  HotelCostsTest:146 - ***** HotelCostsTest Completed  ****
+2026-02-07 21:11:14 INFO  HotelCostsTest:13 - ***** Starting Cruise Details Test ****
+2026-02-07 21:11:57 INFO  HotelCostsTest:22 - ***** Cruise Details Test Completed ****
+2026-02-07 21:11:57 INFO  HotelCostsTest:29 - ***** Starting Cruise Results Test ****
+2026-02-07 21:12:14 INFO  HotelCostsTest:44 - ***** Selected Cruise Details ****
+2026-02-07 21:12:16 INFO  HotelCostsTest:55 - Guest capacity: 4,266
+2026-02-07 21:12:16 INFO  HotelCostsTest:56 - Renovated: 2015
+2026-02-07 21:12:16 INFO  HotelCostsTest:57 - Cruise ID: 205752
+2026-02-07 21:12:16 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****
+2026-02-07 21:12:44 INFO  HotelCostsTest:56 - ID-21:12:44.117464300 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-07 21:13:14 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
+2026-02-07 21:13:14 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
+2026-02-07 21:13:37 INFO  HotelCostsTest:146 - ***** HotelCostsTest Completed  ****
+2026-02-07 21:13:37 INFO  HotelCostsTest:13 - ***** Starting Cruise Details Test ****
+2026-02-07 21:14:23 INFO  HotelCostsTest:22 - ***** Cruise Details Test Completed ****
+2026-02-07 21:14:23 INFO  HotelCostsTest:29 - ***** Starting Cruise Results Test ****
+2026-02-07 21:14:41 INFO  HotelCostsTest:44 - ***** Selected Cruise Details ****
+2026-02-07 21:14:44 INFO  HotelCostsTest:55 - Guest capacity: 4,266
+2026-02-07 21:14:44 INFO  HotelCostsTest:56 - Renovated: 2015
+2026-02-07 21:14:44 INFO  HotelCostsTest:57 - Cruise ID: 205752
+2026-02-07 21:14:44 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****

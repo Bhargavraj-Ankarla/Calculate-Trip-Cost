@@ -28,7 +28,8 @@ public class HotelResultsPage extends BasePage {
 
     public String getResultsCount() {
         try {
-            return resultsCount.getAttribute("aria-label");
+            String TotalResults=resultsCount.getAttribute("aria-label");
+            return TotalResults.split(" ")[0].trim();
         } catch (Exception e) {
             System.out.println("Hotel results count element not found: " + e.getMessage());
             return "N/A";
