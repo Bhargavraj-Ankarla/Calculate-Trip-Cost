@@ -1,11 +1,11 @@
-package TestCases;
+package TestClasses;
 
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import PageObjects.HotelResultsPage;
-import PageObjects.Homepage;
-import BaseTest.BaseTestClass;
+import PageClasses.HotelResultsPage;
+import PageClasses.Homepage;
+import BaseClass.BaseTestClass;
 import Utilities.ExcelUtil;
 
 import java.time.LocalDate;
@@ -109,7 +109,6 @@ public class HotelCostsTest extends BaseTestClass {
         try{
             hr.applyPoolFilter();
             Assert.assertEquals(hr.getSearchResultText(),"Pool","The applied filter is not displayed in the search result text.");
-
             hr.refreshPage();
             hotelCards = hr.getHotelCards();
             afterPool = new ArrayList<>();

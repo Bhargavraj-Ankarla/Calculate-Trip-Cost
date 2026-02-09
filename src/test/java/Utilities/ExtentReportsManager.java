@@ -8,13 +8,11 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import BaseTest.BaseTestClass;
+import BaseClass.BaseTestClass;
 
-import java.awt.*;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class ExtentReportsManager implements ITestListener {
     public ExtentSparkReporter sparkReporter;

@@ -1,10 +1,10 @@
-package TestCases;
+package TestClasses;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import PageObjects.CruiseResultsPage;
-import PageObjects.CruiseSearchPage;
-import BaseTest.BaseTestClass;
+import PageClasses.CruiseResultsPage;
+import PageClasses.CruiseSearchPage;
+import BaseClass.BaseTestClass;
 import Utilities.ExcelUtil;
 
 public class CruiseDetailsTest extends BaseTestClass {

@@ -1,4 +1,4 @@
-package PageObjects;
+package PageClasses;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
