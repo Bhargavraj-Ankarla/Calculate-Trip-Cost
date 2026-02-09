@@ -10,6 +10,7 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import BaseClass.BaseTestClass;
 
+import javax.swing.text.Utilities;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -61,7 +62,7 @@ public class ExtentReportsManager implements ITestListener {
         test.log(Status.FAIL,result.getName()+" got failed");
         test.log(Status.INFO, result.getThrowable().getMessage());
         try {
-            String imgPath = new BaseTestClass().captureScreen(result.getName());
+            String imgPath = new Screenshot().captureScreen(result.getName());
             test.addScreenCaptureFromPath(imgPath);
         } catch (IOException e1) {
             e1.printStackTrace();
