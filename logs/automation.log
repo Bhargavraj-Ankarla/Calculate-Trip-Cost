@@ -1,12 +1,13 @@
-2026-02-09 08:26:40 INFO  HotelCostsTest:56 - ID-08:26:40.279591800 --Starting HotelCostsTest - HomepageDashboard  
-2026-02-09 08:26:58 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
-2026-02-09 08:26:58 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
-2026-02-09 08:27:40 INFO  HotelCostsTest:145 - ***** HotelCostsTest Completed  ****
-2026-02-09 08:27:40 INFO  HotelCostsTest:13 - ***** Starting Cruise Details Test ****
-2026-02-09 08:28:22 INFO  HotelCostsTest:22 - ***** Cruise Details Test Completed ****
-2026-02-09 08:28:22 INFO  HotelCostsTest:29 - ***** Starting Cruise Results Test ****
-2026-02-09 08:28:34 INFO  HotelCostsTest:44 - ***** Selected Cruise Details ****
-2026-02-09 08:28:36 INFO  HotelCostsTest:55 - Guest capacity: 4,266
-2026-02-09 08:28:36 INFO  HotelCostsTest:56 - Renovated: 2015
-2026-02-09 08:28:36 INFO  HotelCostsTest:57 - Cruise ID: 205752
-2026-02-09 08:28:37 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****
+2026-02-10 17:36:44 INFO  HotelCostsTest:56 - ID-17:36:44.044319900 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-10 20:18:14 INFO  HotelCostsTest:56 - ID-20:18:14.033351500 --Starting HotelCostsTest - HomepageDashboard  
+2026-02-10 20:18:34 INFO  HotelCostsTest:84 - ***** Searched for required hotel details  ****
+2026-02-10 20:18:35 INFO  HotelCostsTest:92 - ***** HotelResultsPage Started  ****
+2026-02-10 20:18:50 INFO  HotelCostsTest:145 - ***** HotelCostsTest Completed  ****
+2026-02-10 20:18:50 INFO  HotelCostsTest:13 - ***** Starting Cruise Details Test ****
+2026-02-10 20:19:34 INFO  HotelCostsTest:22 - ***** Cruise Details Test Completed ****
+2026-02-10 20:19:34 INFO  HotelCostsTest:29 - ***** Starting Cruise Results Test ****
+2026-02-10 20:19:50 INFO  HotelCostsTest:44 - ***** Selected Cruise Details ****
+2026-02-10 20:19:53 INFO  HotelCostsTest:55 - Guest capacity: 4,266
+2026-02-10 20:19:53 INFO  HotelCostsTest:56 - Renovated: 2015
+2026-02-10 20:19:53 INFO  HotelCostsTest:57 - Cruise ID: 205752
+2026-02-10 20:19:53 INFO  HotelCostsTest:64 - ***** Cruise Results Test Completed ****
